@@ -1,0 +1,261 @@
+<!-- author- Ankita chagol date-10/05/24 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Set body height to full viewport height */
+        }
+
+        /* Overlay navigation styles */
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+        .overlay-content {
+            position: relative;
+            top: 10%; /* Adjust top position */
+            left: 30px; /* Adjust left position */
+            width: 100%;
+            text-align: left;
+            color: white;
+        }
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .overlay a:hover, .overlay a:focus {
+            color: #f1f1f1;
+        }
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        @media screen and (max-height: 450px) {
+            .overlay {
+                overflow-y: auto;
+            }
+            .overlay a {
+                font-size: 20px;
+            }
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+
+        /* Slider container */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            overflow: hidden;
+        }
+
+        /* Slide styling */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            display: none; /* Initially hide all slides */
+        }
+
+        /* Adjusting image style to fit the full screen */
+        .slide img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover; /* Cover the entire screen */
+        }
+
+        /* Main title */
+        .theconnection {
+            position: absolute;
+            top: 0; /* Adjust top position */
+            left: 30px; /* Adjust left position */
+            color: white; /* Text color */
+            z-index: 10; /* Bring to the front */
+        }
+
+        /* Initial text container */
+        #initialText {
+            position: absolute;
+            top: 20%; /* Adjust position below main title */
+            left: 10%; /* Adjust left position */
+            padding: 10px;
+            color: white; /* Text color */
+            z-index: 10; /* Bring to the front */
+            display: block; /* Initially displayed */
+            /* Sliding-out animation */
+            transition: transform 1s ease-out; /* Animation duration and easing */
+        }
+
+        /* Slide content at the top left */
+        .slide-content {
+            position: absolute;
+            top: 20%; /* Adjust position */
+            left: 10%; /* Adjust left position */
+            padding: 10px;
+            color: white; /* Text color */
+            display: none; /* Initially hidden */
+        }
+        
+        /* Get in Touch button */
+        .ankita span {
+            font-size: 30px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay navigation -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <p>The connection <br>Newbury <br>RG14 2FN </p> <br>
+
+            <h1>CRBE</h1>
+            <p>Kevin wood <br>
+            +44 (0) 7900 584150 <br>
+            kevin.wood@cbre.com </p>
+
+            <p> Charlotte reaney <br>
+            +44 (0) 7841684842 <br>
+            charlotte.reaney@cbre.com</p> 
+
+            <p> Edward smith <br>
+            +44 (0) 7836 656538 <br>
+            edward.smith@realestate.bnpparibas</p>
+
+            <p>Rebecca HEWITT <br>
+             +44 (0) 7776 636539 <br>
+            Rebecca.HEWITT@realestate.bnpparibas</p>
+        </div>
+    </div>
+
+    <!-- Main title -->
+    <h1 class="theconnection">THE CONNECTION</h1>
+
+    <!-- Initial text container -->
+    <div id="initialText" class="initial-text">
+        <p style="font-size:70px;">A <br>BUSINESS<br> CAMPUS GROUNDED <br>IN NATURE </p>
+    </div>
+
+    <!-- Ankita section -->
+    <div class="ankita">
+        <!-- Image slider container -->
+        <div id="slider" class="slider">
+            <!-- Slide 1 with content -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+                <div class="slide-content">
+                    <h2 class="shift">Space to flourish</h2>
+                    <p class="shift">The Connection, a 487,000 sq ft campus among 38 acres of landscaped grounds in Newbury set the foundation for innovation, connection, and collaboration close to nature. Let your legacy take root.</p>
+                    <!-- Get in touch button -->
+                    <br> <span style="font-size:30px; cursor:pointer" onclick="openNav()" class="shift">Get in Touch</span>
+                </div>
+            </div>
+
+            <!-- Slide 2 with content -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1476842634003-7dcca8f832de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
+                <div class="slide-content">
+                    <h2 class="shift">Space to flourish</h2>
+                    <p>The Connection, a 487,000 sq ft campus among 38 acres of landscaped grounds in Newbury set the foundation for innovation, connection, and collaboration close to nature. Let your legacy take root.</p>
+                    <!-- Get in touch button -->
+                    <br> <span style="font-size:30px; cursor:pointer" onclick="openNav()" class="shift">Get in Touch</span>
+                </div>
+            </div>
+
+            <!-- Slide 3 with content -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
+                <div class="slide-content">
+                    <h2 class="shift">Space to flourish</h2>
+                    <p>The Connection, a 487,000 sq ft campus among 38 acres of landscaped grounds in Newbury set the foundation for innovation, connection, and collaboration close to nature. Let your legacy take root.</p>
+                    <!-- Get in touch button -->
+                    <br><span style="font-size:30px; cursor:pointer" onclick="openNav()" class="shift">Get in Touch</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Open the overlay
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+        
+        // Close the overlay
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+
+        // Automatic image slider JavaScript code
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        // Show the given slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        // Move to the next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        // Show the first slide initially
+        showSlide(currentSlide);
+        
+        // Change slides automatically every 4 seconds
+        setInterval(nextSlide, 4000);
+        
+        // Function to hide initial text and show the slider after 3 seconds
+        function hideInitialTextAndShowContent() {
+            const initialText = document.getElementById('initialText');
+            // Add a sliding-out animation
+            initialText.style.transition = 'transform 1s ease-out'; // Animation duration and easing
+            initialText.style.transform = 'translateX(-100%)'; // Slide out to the left
+
+            // Wait for the animation to complete (1 second) before hiding the initial text and showing the slide content
+            setTimeout(() => {
+                // Hide the initial text
+                initialText.style.display = 'none';
+                // Show the slide content
+                document.querySelectorAll('.slide-content').forEach(function(content) {
+                    content.style.display = 'block';
+                });
+            }, 1000);
+        }
+        
+        // Hide the initial text and show the slide content after 3 seconds (3000 milliseconds)
+        setTimeout(hideInitialTextAndShowContent, 3000);
+    </script>
+</body>
+</html>
